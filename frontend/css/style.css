@@ -250,6 +250,90 @@ nav.links a:hover::after { width: 100%; }
 .service-card h3 { font-size: 1.15rem; margin-bottom: 0.4rem; }
 .service-card p { font-size: 0.85rem; color: var(--ivory-dim); }
 
+/* =================== PRICE LIST =================== */
+.price-list {
+  max-width: 820px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+details.price-category {
+  background: var(--charcoal);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+details.price-category summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  color: var(--gold-light);
+  transition: background 0.25s ease;
+}
+details.price-category summary::-webkit-details-marker { display: none; }
+details.price-category summary::after {
+  content: '+';
+  font-size: 1.4rem;
+  color: var(--pink);
+  transition: transform 0.3s ease;
+  line-height: 1;
+}
+details.price-category[open] summary::after { transform: rotate(45deg); }
+details.price-category summary:hover { background: rgba(201,162,39,0.06); }
+.price-body { padding: 0 1.5rem 1.4rem; }
+
+.price-subgroup { margin-bottom: 1.1rem; }
+.price-subgroup:last-child { margin-bottom: 0; }
+.price-subgroup h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pink);
+  margin-bottom: 0.6rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+.price-subgroup:first-child h4 { border-top: none; padding-top: 0; }
+
+.price-rows { display: grid; gap: 0.15rem; }
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.45rem 0;
+  font-size: 0.92rem;
+}
+.price-row .p-name { color: var(--ivory); white-space: nowrap; }
+.price-row .p-dots {
+  flex: 1;
+  border-bottom: 1px dotted var(--border);
+  transform: translateY(-4px);
+}
+.price-row .p-val { color: var(--gold-light); font-weight: 500; white-space: nowrap; }
+
+.price-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2rem;
+}
+@media (max-width: 640px) {
+  .price-grid-2col { grid-template-columns: 1fr; gap: 0; }
+}
+
+.price-note {
+  text-align: center;
+  color: var(--ivory-dim);
+  font-size: 0.85rem;
+  margin-top: 1.6rem;
+}
+
 /* =================== PACKAGES =================== */
 .packages-grid {
   display: grid;

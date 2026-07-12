@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — Radhika Beauty Parlour</title>
+<link rel="icon" href="assets/logo.png" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/admin.css" />
+</head>
+<body class="admin-body">
+
+<div class="admin-shell">
+  <header class="admin-header">
+    <div class="brand"><img src="assets/logo.png" alt="logo"/><span>Radhika <span class="tag">Admin</span></span></div>
+    <button class="btn" id="logout-btn" style="display:none;">Log Out</button>
+  </header>
+
+  <!-- LOGIN VIEW -->
+  <section id="login-view" class="admin-card login-card">
+    <h2 style="font-size:1.6rem; margin-bottom:0.4rem;">Admin Login</h2>
+    <p class="lead" style="margin-bottom:1.4rem; font-size:0.9rem;">Enter the admin password to view and manage bookings.</p>
+    <form id="login-form">
+      <label for="password">Password</label>
+      <input type="password" id="password" required placeholder="Admin password" />
+      <button type="submit" class="btn solid" style="margin-top:1rem;">Log In</button>
+      <p id="login-error" class="err" style="margin-top:0.8rem; font-size:0.85rem;"></p>
+    </form>
+  </section>
+
+  <!-- DASHBOARD VIEW -->
+  <section id="dashboard-view" style="display:none;">
+    <div class="admin-toolbar">
+      <div class="filter-tabs" id="filter-tabs">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="pending">Pending</button>
+        <button data-filter="confirmed">Confirmed</button>
+        <button data-filter="cancelled">Cancelled</button>
+      </div>
+      <button class="btn" id="refresh-btn">Refresh</button>
+    </div>
+    <div id="bookings-list"></div>
+    <p id="empty-msg" style="display:none; color:var(--ivory-dim); text-align:center; padding:2rem 0;">No bookings here yet.</p>
+  </section>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>
